@@ -1,0 +1,42 @@
+1. Names of all females
+
+?- female(X).
+X = sara ;
+X = nora.
+
+
+2. Whether there is any male
+
+?- male(X).
+X = ali ;
+X = ahmad ;
+X = muhammad ;
+X = faisal ;
+X = hassan ;
+X = khan.
+
+
+3. The grandparent of Faisal
+
+?- parent(X,Y), parent(Y,faisal).
+X = ali,
+Y = muhammad.
+
+
+4. All daughters of Ahmad
+
+?- parent(ahmad,X), female(X).
+X = sara ;
+X = nora.
+
+
+5. Whether Ahmad and Muhammad have a common parent
+
+?- parent(X,ahmad), parent(X,muhammad).
+X = ali.
+
+
+6. Whether Khan is the brother of Nora
+
+?- parent(X,khan), parent(X,nora), male(khan).
+X = ahmad.
