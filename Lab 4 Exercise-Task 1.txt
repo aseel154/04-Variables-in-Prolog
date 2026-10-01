@@ -1,0 +1,39 @@
+?- house = house.
+Result: true.
+Explanation: Both terms are identical, so they can be unified.
+
+?- house = abc.
+Result: false.
+Explanation: house and abc are different atoms, so they cannot be unified.
+
+?- edge(a,b) = edge(C,b).
+Result: C = a.
+Explanation: The terms match when C is assigned a.
+
+?- edge(a,d) = edge(C,B).
+Result: C = a, B = d.
+Explanation: The terms match when C = a and B = d.
+
+?- edge(C,B) = edge(a,d).
+Result: C = a, B = d.
+Explanation: The terms match when C = a and B = d.
+
+?- edge(A,f(g,h)) = edge(a,B).
+Result: A = a, B = f(g,h).
+Explanation: The terms match when A = a and B = f(g,h).
+
+?- edge(A,A) = edge(b,c).
+Result: false.
+Explanation: A would need to be both b and c, which is impossible.
+
+?- edge(A,A) = edge(b,b).
+Result: A = b.
+Explanation: Both positions contain b, so A can be unified with b.
+
+?- A = B, B = f.
+Result: A = B, B = f.
+Explanation: A and B are unified, and B is assigned f, so both represent f.
+
+?- A = B, B = f, A = e.
+Result: false.
+Explanation: A and B become f, but then A is required to be e. Since f and e are different atoms, unification fails.
